@@ -1,105 +1,70 @@
-*autopep8.txt*   
+*yapf.txt*   
 
-Author: tell-k  (ffk2005 AT gmail DOT com)
+Author: Simon Walker  (s.r.walker101 AT googlemail DOT com)
 For Vim version 7 and above
-Last change: 2014 May 23
+Last change: 2015 April 10
 
-1. Overview         |autopep8-overview|
-2. Required         |autopep8-required|
-3. Installation     |autopep8-installation|
-4. Usage            |autopep8-usage|
-5. Customization    |autopep8-customization|
-6. License          |autopep8-license|
-
-==============================================================================
-1. Overview                                                *autopep8-overview*
-
-vim-autopep8 is a Vim plugin that applies autopep8 to your current file.
-autopep8 automatically formats Python code to conform to the PEP 8 style guide.
+1. Overview         |yapf-overview|
+2. Required         |yapf-required|
+3. Installation     |yapf-installation|
+4. Usage            |yapf-usage|
+5. Customization    |yapf-customization|
+6. License          |yapf-license|
 
 ==============================================================================
-2. Required                                                *autopep8-required*
+1. Overview                                                *yapf-overview*
 
-autopep8
+vim-yapf is a Vim plugin that applies yapf to your current file.
+yapf automatically formats Python code.
+
+==============================================================================
+2. Required                                                *yapf-required*
+
+yapf
 >
-    https://pypi.python.org/pypi/autopep8/
+    https://pypi.python.org/pypi/yapf/
 <
 
 ==============================================================================
-3. Installation                                        *autopep8-installation*
+3. Installation                                        *yapf-installation*
 
 Simply put the contents of this repository in your ~/.vim/bundle directory.
 
 ==============================================================================
-4. Usage                                                      *autopep8-usage*
-
-shortcut
-
-1. Open Python file.
-2. Press <F8> to run autopep8 on it
+4. Usage                                                      *yapf-usage*
 
 call function
 
 >
- :Autopep8
+ :Yapf
 <
 
 with arguments
 
 >
- :Autopep8 --range 1 5
+ :Yapf --style google
 
  or 
 
- :call Autopep8(" --range 1 5")
+ :call Yapf(" --style google")
 <
 
 ==============================================================================
-5. Customization                                      *autopep8-customization*
+5. Customization                                      *yapf-customization*
 
-If you don't want to use the <F8> key for autopep8, simply remap it to
-another key.  It autodetects whether it has been remapped and won't register
-the <F8> key if so.  For example, to remap it to <F3> instead, use:
+The yapf style can be globally set, in your vimrc:
+
 >
- autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
+ let g:yapf_style = "google"
 <
 
-Do not fix these errors/warnings (default: E226,E24,W6)
->
- let g:autopep8_ignore="E501,W293"
-<
+or
 
-Fix only these errors/warnings (e.g. E4,W)
 >
- let g:autopep8_select="E501,W293"
-<
-
-Maximum number of additional pep8 passes (default: 100)
->
- let g:autopep8_pep8_passes=100
-<
-
-Set maximum allowed line length (default: 79)
->
- let g:autopep8_max_line_length=79
-<
-
-Enable possibly unsafe changes (E711, E712) (default: non defined)
->
- let g:autopep8_aggressive=1
-<
-
-Number of spaces per indent level (default: 4)
->
- let g:autopep8_indent_size=2
-<
-
-Disable show diff window
->
- let g:autopep8_disable_show_diff=1
+ let g:yapf_style = "pep8"
 <
 
 ==============================================================================
-6. license                                                  *autopep8-license*
+6. license                                                  *yapf-license*
 
 MIT license
