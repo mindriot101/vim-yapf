@@ -22,7 +22,7 @@ if !exists("*yapf(...)")
         if exists("g:yapf_cmd")
             let yapf_cmd=g:yapf_cmd
         else
-            let yapf_cmd="yapf --verify"
+            let yapf_cmd="yapf"
         endif
 
         if !executable(yapf_cmd)
