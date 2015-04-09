@@ -38,3 +38,5 @@ function Yapf(...)
     let execmdline=yapf_cmd . " " . yapf_style . " " . l:args
     execute "0,$!" . execmdline
 endfunction
+
+command! -nargs=? -bar Yapf call Yapf(<f-args>)
