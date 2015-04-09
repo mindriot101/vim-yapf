@@ -14,7 +14,10 @@ if exists("b:loaded_yapf_ftplugin")
 endif
 let b:loaded_yapf_ftplugin=1
 
-function Yapf()
+function Yapf(...)
+
+    let l:args = get(a:, 1, '')
+
     if exists("g:yapf_cmd")
         let yapf_cmd=g:yapf_cmd
     else
@@ -32,6 +35,6 @@ function Yapf()
         return
     endif
 
-    let execmdline=yapf_cmd.yapf_style
+    let execmdline=yapf_cmd . " " . yapf_style . " " . l:args
     execute "0,$!" . execmdline
 endfunction
