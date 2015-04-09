@@ -1,98 +1,70 @@
 ========================
-vim-autopep8
+vim-yapf
 ========================
 
-vim-autopep8 is a Vim plugin that applies autopep8 to your current file.
-autopep8 automatically formats Python code to conform to the PEP 8 style guide.
+vim-yapf is a Vim plugin that applies yapf to your current file.
+yapf automatically formats Python code, based on improved syntax styles.
 
 Required
 =====================
 
-* `autopep8 <https://pypi.python.org/pypi/autopep8/>`_
+* `yapf <https://pypi.python.org/pypi/yapf/>`_
 
 Installation
 =====================
 
 Simply put the contents of this repository in your ~/.vim/bundle directory.
 
-Documentation (Read The Docs)
-==============================
+Bindings
+=====================
 
-* https://vim-autopep8.readthedocs.org/en/latest/
+The plugin does not create any bindings by default, this is left up to the user. An example could be:
+
+
+::
+
+ :nnoremap <leader>y :call Yapf()<cr>
+
+or
+
+::
+
+ :nnoremap <leader>y :Yapf<cr>
+
+
 
 Usage
 =====================
 
-shortcut
-
-1. Open Python file.
-2. Press <F8> to run autopep8 on it
-
 call function
 
-:: 
+::
 
- :Autopep8
+ :Yapf
 
 with arguments
 
 ::
 
- :Autopep8 --range 1 5
+ :Yapf --style google
 
- or 
+or
 
- :call Autopep8(" --range 1 5")
+::
+
+ :call Yapf(" --style pep8")
 
 Customization
 =====================
 
-If you don't want to use the `<F8>` key for autopep8, simply remap it to
-another key.  It autodetects whether it has been remapped and won't register
-the `<F8>` key if so.  For example, to remap it to `<F3>` instead, use:
+The yapf style can be globally set, in your vimrc:
 
 ::
 
- autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
+ let g:yapf_style = "google"
 
-Do not fix these errors/warnings (default: E226,E24,W6)
-
-::
-
- let g:autopep8_ignore="E501,W293"
-
-Fix only these errors/warnings (e.g. E4,W)
+or
 
 ::
 
- let g:autopep8_select="E501,W293"
-
-Maximum number of additional pep8 passes (default: 100)
-
-:: 
-
- let g:autopep8_pep8_passes=100
-
-Set maximum allowed line length (default: 79)
-
-:: 
-
- let g:autopep8_max_line_length=79
-
-Enable possibly unsafe changes (E711, E712) (default: non defined)
-
-:: 
-
- let g:autopep8_aggressive=1 
-
-Number of spaces per indent level (default: 4)
-
-:: 
-
- let g:autopep8_indent_size=2
-
-Disable show diff window
-
-:: 
-
- let g:autopep8_disable_show_diff=1
+ let g:yapf_style = "pep8"
