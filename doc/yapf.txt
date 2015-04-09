@@ -43,9 +43,11 @@ with arguments
 
 >
  :Yapf --style google
+<
 
- or 
+or
 
+>
  :call Yapf(" --style google")
 <
 
