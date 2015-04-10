@@ -16,7 +16,7 @@ Required
 Installation
 =====================
 
-Simply put the contents of this repository in your ~/.vim/bundle directory.
+Either use a plugin manager and add ``Plug[in] 'mindriot101/vim-yapf'`` to your ``vimrc``, or use pathogen.
 
 Bindings
 =====================
