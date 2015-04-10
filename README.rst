@@ -4,8 +4,8 @@ vim-yapf
 
 **ATTENTION:** you probably don't need this plugin! See `Why you may not need this plugin`_.
 
-vim-yapf is a Vim plugin that applies yapf to your current file.
-yapf automatically formats Python code, based on improved syntax styles.
+``vim-yapf`` is a Vim plugin that applies yapf to your current file.
+``yapf`` automatically formats Python code, based on improved syntax styles.
 
 
 Required
