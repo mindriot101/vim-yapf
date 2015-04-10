@@ -13,6 +13,18 @@ Required
 
 * `yapf <https://pypi.python.org/pypi/yapf/>`_
 
+``yapf`` can be installed either with ``pip``:
+
+::
+
+ pip install yapf
+
+or by installing with conda (OSX and linux64 only) with my binstar channel:
+
+::
+
+ conda install -c https://conda.binstar.org/srwalker101 yapf
+
 Installation
 =====================
 
