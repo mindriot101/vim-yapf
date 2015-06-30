@@ -3,3 +3,5 @@
 *.swn
 *.pyc
 docs/_build/*
+.vim-flavor
+.direnv
