@@ -37,9 +37,17 @@ if !exists("Yapf(...)")
         endif
 
         let execmdline=yapf_cmd . " " . yapf_style . " " . l:args
-        execute "0,$!" . execmdline
+        let current_line = line('.')
+        silent execute "0,$!" . execmdline
+        if v:shell_error == 1
+            " Shell command failed, so open a new buffer with error text
+            execute 'normal! gg"ayG'
+            silent undo
+            execute 'normal! ' . current_line . 'G'
+            silent new
+            silent put a
+        end
     endfunction
 
     command! -nargs=? -bar Yapf call Yapf(<f-args>)
 endif
-
