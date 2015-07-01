@@ -39,7 +39,7 @@ if !exists("Yapf(...)")
         let execmdline=yapf_cmd . " " . yapf_style . " " . l:args
         let current_line = line('.')
         silent execute "0,$!" . execmdline
-        if v:shell_error == 1
+        if v:shell_error != 0
             " Shell command failed, so open a new buffer with error text
             execute 'normal! gg"ayG'
             silent undo
