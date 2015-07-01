@@ -2,6 +2,10 @@
 vim-yapf
 ========================
 
+.. image:: https://badges.gitter.im/Join%20Chat.svg
+   :alt: Join the chat at https://gitter.im/mindriot101/vim-yapf
+   :target: https://gitter.im/mindriot101/vim-yapf?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 **ATTENTION:** you probably don't need this plugin! See `Why you may not need this plugin`_.
 
 ``vim-yapf`` is a Vim plugin that applies yapf to your current file.
