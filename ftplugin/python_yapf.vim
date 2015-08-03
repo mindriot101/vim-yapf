@@ -37,13 +37,18 @@ if !exists("Yapf(...)")
         endif
 
         let execmdline=yapf_cmd . " " . yapf_style . " " . l:args
-        let current_line = line('.')
+		" save current cursor position
+		let current_cursor = getpos(".")
         silent execute "0,$!" . execmdline
+		" restore cursor
+		call setpos('.', current_cursor)
         if v:shell_error != 0
             " Shell command failed, so open a new buffer with error text
             execute 'normal! gg"ayG'
             silent undo
             execute 'normal! ' . current_line . 'G'
+            " restore cursor position
+            call setpos('.', current_cursor)
             silent new
             silent put a
         end
