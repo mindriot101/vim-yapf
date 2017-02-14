@@ -107,6 +107,13 @@ Instead of installing this plugin, one could add a mapping e.g.:
 
  autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
 
-Alternatively yapf could be set as the ``formatprg`` for the python filetype, and reformatting can be performed with the `gq{motion}`_ operator (e.g. with visual selection) to reformat a part of the file. *On the other hand this really flies in the face of what ``yapf`` is designed for, that is an executable style guide for all Python code*.
+Alternatively yapf could be set as the ``formatprg`` for the python filetype, and reformatting can be performed with the `gq{motion}`_ operator (e.g. with visual selection) to reformat a part of the file.
+Alternatively alternatively yapf could be set as the ``equalprg``:
+
+::
+
+ setlocal equalprg=yapf
+
+and reformat the whole file with ``gg=G`` or a single line with ``=``.
 
 .. _gq{motion}: https://github.com/vim/vim/blob/b182b40080a23ea1e1ffa28ea03b412174a236bb/runtime/doc/change.txt#L1299
