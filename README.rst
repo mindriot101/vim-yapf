@@ -91,6 +91,8 @@ or
 Why you may not need this plugin
 ================================
 
+TL;DR: This plugin provides a very simple command.  If you want much more, use vim-codefmt_.
+
 The plugin itself is very simple. It handles user options granted, but at its core it uses ex commands to perform its magic. ``yapf`` behaves like a good unix command: it takes text on ``stdin`` and spits the altered result to ``stdout``, which is exactly what vim expects.
 
 At its core, this plugin runs the ex command:
@@ -116,4 +118,8 @@ Alternatively alternatively yapf could be set as the ``equalprg``:
 
 and reformat the whole file with ``gg=G`` or a single line with ``=``.
 
+vim-codefmt_ is a much more fully-functional code formatter, with support for a variety of formatters (including yapf) and the ability to format a visual selection.  If your needs are not met by this plugin, you my consider installing vim-codefmt instead.
+
 .. _gq{motion}: https://github.com/vim/vim/blob/b182b40080a23ea1e1ffa28ea03b412174a236bb/runtime/doc/change.txt#L1299
+
+.. _vim-codefmt: https://github.com/google/vim-codefmt
