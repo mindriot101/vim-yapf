@@ -107,6 +107,12 @@ Instead of installing this plugin, one could add a mapping e.g.:
 
  autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr><C-o>
 
+Alternatively yapf can be configured to run on save:
+
+::
+
+ autocmd BufWritePre *.py 0,$!yapf
+
 Alternatively yapf could be set as the ``formatprg`` for the python filetype, and reformatting can be performed with the `gq{motion}`_ operator (e.g. with visual selection) to reformat a part of the file.
 Alternatively alternatively yapf could be set as the ``equalprg``:
 
