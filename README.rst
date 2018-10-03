@@ -113,10 +113,10 @@ Alternatively yapf can be configured to run on save:
 
  autocmd BufWritePre *.py 0,$!yapf
 
-Warning: yapf errors will overwrite your buffer. If you typed `:w`, you can
-type `:undo` to get your old buffer back. If you typed `:ZZ`, there is no way
-to get your old buffer back. Use this [Vim Auto-backup solution](https://gist.github.com/nepsilon/003dd7cfefc20ce1e894db9c94749755)
-to save make backups, so you don't lose too many edits.
+Warning: yapf errors will overwrite your buffer. If you typed ``:w``, you can
+type ``:undo`` to get your old buffer back. If you typed ``:ZZ``, there is no way
+to get your old buffer back. Use this `solution <https://gist.github.com/nepsilon/003dd7cfefc20ce1e894db9c94749755>`_
+to automatically make backups, so you don't lose too many edits.
 
 Alternatively yapf could be set as the ``formatprg`` for the python filetype, and reformatting can be performed with the `gq{motion}`_ operator (e.g. with visual selection) to reformat a part of the file.
 Alternatively alternatively yapf could be set as the ``equalprg``:
