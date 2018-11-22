@@ -10,4 +10,10 @@ describe 'Yapf'
         call Yapf()
         Expect getline(8) == "class foo(object):"
     end
+
+    it "does not lose information when an error occurs"
+        autocmd BufWritePre *.py 0,$!yapf
+        edit! t/syntax_errors.py
+        write!
+    end
 end

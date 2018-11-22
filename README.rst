@@ -128,3 +128,5 @@ Alternatively alternatively yapf could be set as the ``equalprg``:
 and reformat the whole file with ``gg=G`` or a single line with ``=``.
 
 .. _gq{motion}: https://github.com/vim/vim/blob/b182b40080a23ea1e1ffa28ea03b412174a236bb/runtime/doc/change.txt#L1299
+
+Note: if ``vim-yapf`` is used in this way, any errors will overwrite the current buffer. Make sure to check the buffer for errors before saving. Regardless, the ``undo`` command should work.
